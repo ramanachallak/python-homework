@@ -10,6 +10,22 @@ budget_csvpath = Path('Resources/budget_data.csv')
 
 # declare variables
 
+'''
+month_count variable holds the count of the number of months
+total_profit variable holds the Sum of all the profits
+profit_difference is a variable that stores the change in profit between months, to calculate the maximum increase and decrease in profits
+average_change_profit is a variable to store the average change in profits during the overall period captured in the csv, calculated as total_change_profit/difference_count
+total_change_profit is a variable to store the total change in profits from the csv
+difference_count is a variable to store the number of rows resulting in calculating the difference in month to month profits
+greatest_increase_profits is a variable to store the greatest increase in profits for a given 2 month period in the csv
+greatest_decrease_profts is a variable to store the greatest decrease in profits for a given 2 month period in the csv
+greatest_increase_month is the variable to store the month in which the greatest profit increase was observed
+greatest_decrease_month is the variable to store the month in which the greatest profit decrease was observed
+
+profit_list is a list that holds the rows from the budget_csv file
+
+'''
+
 month_count = 0
 total_profit = 0
 profit_difference = 0
@@ -25,12 +41,14 @@ greatest_decrease_month = ""
 
 profit_list = []
 
-# dictionary to hold the date and profit difference, the date is key
-
-
-# difference_profit = {}
 
 # function definition
+
+'''
+The calculate_profit_difference function takes in 2 arguments, the first being the profit observed during month n, while the second argument is the profit observed during month n+1
+
+The function typecasts the profits from strings to integer, calculates the difference between the profits and returns the same
+'''
 
 def calculate_profit_difference(profit_month1, profit_month2):
 
